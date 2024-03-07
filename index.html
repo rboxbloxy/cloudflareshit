@@ -8,6 +8,30 @@
 <title>welcome to</title>
 <audio src="img/summertime_UNFINISHED.mp3" autoplay loop>co</audio>
 <style>
+  
+  #random-text {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    animation: fade-in-out 0.3s infinite alternate; 
+    text-align: center;
+    color: lightgreen;
+    
+  }
+
+  @keyframes fade-in-out {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+</style>
+<style>
+  #welcome3{
+    font-family: "Merriweather", serif;
+    color: rgb(0, 255, 55);
+    font-weight: bold;
+}
+</style>
+<style>
   @keyframes flash {
     0% {
       color: red;
@@ -69,6 +93,32 @@
 <div style="text-align: center;">
     <h1 id="welcome">WELCOME TO FOOD PRODUCTION #44 !</h1>
 </div>
+<div id="random-text">Loading...</div>
+
+<script>
+
+const texts = [
+  "so cool",
+  "100% zoom recommended",
+  "we are epic",
+  "pls join the discord server",
+  "you are cool if u join the discord server"
+];
+
+
+function updateRandomText() {
+  const randomIndex = Math.floor(Math.random() * texts.length);
+  const randomText = texts[randomIndex];
+  const textElement = document.getElementById("random-text");
+  textElement.textContent = randomText;
+}
+
+
+updateRandomText();
+
+
+setInterval(updateRandomText, 2000); 
+</script>
 <div style="text-align: right;">
 <img src="img/webasset3.png">
 </div>
