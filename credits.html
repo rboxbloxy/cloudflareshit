@@ -7,6 +7,23 @@
 <link rel="stylesheet" href="style.css">
 <title>welcome to</title>
 <style>
+  
+  #random-text {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    animation: fade-in-out 0.3s infinite alternate; 
+    text-align: center;
+    color: lightgreen;
+    
+  }
+
+  @keyframes fade-in-out {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+</style>
+<style>
     @keyframes flash {
       0% {
         color: red;
@@ -59,6 +76,37 @@
 <div style="text-align: center;">
     <h1 id="welcome">CREDITS</h1>
 </div>
+<div id="random-text">Loading...</div>
+
+<script>
+
+const texts = [
+  "so cool",
+  "100% zoom recommended",
+  "we are epic",
+  "pls join the discord server",
+  "you are cool if u join the discord server",
+  "internet explorer sucks",
+  "a",
+  "hello",
+  "dont open this website in mobile please",
+  "noob"
+];
+
+
+function updateRandomText() {
+  const randomIndex = Math.floor(Math.random() * texts.length);
+  const randomText = texts[randomIndex];
+  const textElement = document.getElementById("random-text");
+  textElement.textContent = randomText;
+}
+
+
+updateRandomText();
+
+
+setInterval(updateRandomText, 2000); 
+</script>
 <div style="text-align: right;">
 <img src="img/hrrhdgg.png">
 </div>
