@@ -7,9 +7,26 @@
 <link rel="stylesheet" href="style.css">
 <title>welcome to</title>
 <style>
+  
+  #random-text {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    animation: fade-in-out 0.3s infinite alternate; 
+    text-align: center;
+    color: lightgreen;
+    
+  }
+
+  @keyframes fade-in-out {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+</style>
+<style>
     @keyframes flash {
       0% {
-        color: red;
+        color: rgb(204, 0, 255);
       }
       50% {
         color: yellow;
@@ -59,7 +76,38 @@
 <div style="text-align: center;">
     <h1 id="welcome">DISCORD</h1>
 </div>
-<div style="position: absolute; top: 300%; left: 50%; transform: translate(-50%, -50%);" id="welcome2">
+<div id="random-text">Loading...</div>
+
+<script>
+
+const texts = [
+  "so cool",
+  "100% zoom recommended",
+  "we are epic",
+  "pls join the discord server",
+  "you are cool if u join the discord server",
+  "internet explorer sucks",
+  "a",
+  "hello",
+  "dont open this website in mobile please",
+  "noob"
+];
+
+
+function updateRandomText() {
+  const randomIndex = Math.floor(Math.random() * texts.length);
+  const randomText = texts[randomIndex];
+  const textElement = document.getElementById("random-text");
+  textElement.textContent = randomText;
+}
+
+
+updateRandomText();
+
+
+setInterval(updateRandomText, 2000); 
+</script>
+<div style="position: absolute; top: 190%; left: 50%; transform: translate(-50%, -50%);" id="welcome2">
   <a href="https://discord.gg/2vSMdugEVb">DISCORD</a>
 </div>
 <div style="position: absolute; top: 400%; left: 50%; transform: translate(-50%, -50%);" id="welcome2">
