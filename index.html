@@ -8,6 +8,23 @@
 <title>welcome to</title>
 <audio src="img/summertime_UNFINISHED.mp3" autoplay loop>co</audio>
 <style>
+  @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+      }
+      40% {
+          transform: translateY(-30px);
+      }
+      60% {
+          transform: translateY(-15px);
+      }
+  }
+  
+  .bounce-text {
+      animation: bounce 1s ease;
+  }
+</style>
+<style>
   
   #random-text {
     font-size: 20px;
@@ -90,8 +107,8 @@
 <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%);" id="welcome2">
   What is Food Production #44 ?
 </div>
-<div style="text-align: center;">
-    <h1 id="welcome">WELCOME TO FOOD PRODUCTION #44 !</h1>
+<div style="text-align: center;" class="bounce-text">
+    <h1 id="welcome" class="bounce-text">WELCOME TO FOOD PRODUCTION #44 !</h1>
 </div>
 <div id="random-text">Loading...</div>
 
@@ -107,8 +124,7 @@ const texts = [
   "a",
   "hello",
   "dont open this website in mobile please",
-  "noob",
-  "HERES THE MAIL THAT NEVER FAILS!"
+  "noob"
 ];
 
 
