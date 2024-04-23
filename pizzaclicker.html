@@ -127,7 +127,12 @@
         counter.textContent = `Clicked: ${clickCount}`;
     });
 </script>
-
+<script>
+  document.getElementById("image-container").addEventListener("click", function() {
+      var audio = document.getElementById("audio");
+      audio.play();
+  });
+  </script>
 
 </body>
 </html>
